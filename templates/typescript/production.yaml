@@ -1,0 +1,17 @@
+version: "3"
+services:
+  <project-name>:
+    container_name: <project-name>
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./src:/app/src
+    expose:
+      - '4000'
+    ports:
+      - '4000:4000'
+    command: npm run production

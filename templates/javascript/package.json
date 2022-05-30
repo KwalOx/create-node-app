@@ -1,0 +1,29 @@
+{
+  "name": "<project-name>",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+	  "clean": "rm -rf dist && mkdir dist",
+	  "dev": "nodemon -L src/index.js",
+	  "build": "npm run clean && babel ./src -d dist",
+	  "production": "node dist/index.js",
+	  "linter": "eslint \"**/*.js\""
+	},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+	  "@babel/cli": "^7.17.6",
+	  "@babel/core": "^7.17.5",
+	  "@babel/node": "^7.16.8",
+	  "@babel/plugin-transform-runtime": "^7.17.0",
+	  "@babel/preset-env": "^7.16.11",
+	  "@babel/runtime": "^7.17.2",
+	  "eslint": "^8.16.0",
+	  "nodemon": "^2.0.16"
+	},
+	"dependencies": {
+	  "dotenv": "^16.0.1"
+	}
+}
