@@ -15,6 +15,5 @@ module.exports = {
 		],
 		"quotes": ["error", "double", { "allowTemplateLiterals": true }],
 		"no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
-	},
-	"plugins": ["jest"]
+	}
 }
