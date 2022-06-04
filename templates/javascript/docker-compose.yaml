@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 services:
   <project-name>:
     container_name: <project-name>
