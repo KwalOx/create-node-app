@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  <project-name>:
+    container_name: <project-name>
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+      args:
+        NODE_ENV: development
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./src:/app/src
+      - ./nodemon.json:/app/nodemon.json
+    expose:
+      - '4000'
+    ports:
+      - '4000:4000'
+    command: npm run dev

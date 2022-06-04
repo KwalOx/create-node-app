@@ -22,7 +22,8 @@
     "create-node-app",
     "node",
     "javascript",
-    "typescript"
+    "typescript",
+    "express"
   ],
   "author": "Joey Lau",
   "license": "MIT",

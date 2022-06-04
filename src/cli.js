@@ -58,7 +58,7 @@ async function promptForMissingOptions(options) {
 			type: process.stdout.isTTY ? "list" : "rawlist",
 			name: "template",
 			message: "Please choose which template to use.",
-			choices: ["JavaScript", "Typescript"],
+			choices: ["JavaScript", "TypeScript", "TypeScript Express"],
 			default: defaultTemplate
 		})
 	}

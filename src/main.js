@@ -24,10 +24,11 @@ async function renamePackageJson(options) {
 		const newFile = file.replaceAll("<project-name>", options.projectName)
 
 		await fsPromises.writeFile(path.join(options.targetDirectory, "package.json"), newFile, "utf8")
-	  } catch (err) {
+	} catch (err) {
 		console.error('%s Failed to replace project name in Package.json', chalk.red.bold("ERROR"));
 		console.error(err)
-	  }
+		process.exit(1)
+	}
 }
 
 async function renameDockerCompose(options) {
@@ -40,10 +41,11 @@ async function renameDockerCompose(options) {
 		const fileProd = await fsPromises.readFile(path.join(options.targetDirectory, "production.yaml"), "utf8");
 		const newFileProd = fileProd.replaceAll("<project-name>", options.projectName)
 		await fsPromises.writeFile(path.join(options.targetDirectory, "production.yaml"), newFileProd, "utf8")
-	  } catch (err) {
+	} catch (err) {
 		console.error('%s Failed to replace project name in production.yaml', chalk.red.bold("ERROR"));
 		console.error(err)
-	  }
+		process.exit(1)
+	}
 }
 
 async function initGit(options) {
@@ -52,7 +54,7 @@ async function initGit(options) {
 	})
 
 	if (result.failed) {
-		return Promise.reject(new Error("Fialed to initialize Git"))
+		return Promise.reject(new Error("Failed to initialize Git"))
 	}
 
 	return 
@@ -68,7 +70,7 @@ export async function createProject(options) {
 	const templateDir = path.resolve(
 		new URL(currentFileUrl).pathname.substring(new URL(currentFileUrl).pathname.indexOf('/')+1),
 		'../../templates',
-		options.template.toLowerCase()
+		options.template.toLowerCase().replaceAll(" ", "-")
 	);
 
 	options.templateDirectory = templateDir
