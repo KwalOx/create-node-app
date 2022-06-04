@@ -20,7 +20,7 @@ function parseArguments(rawArgs) {
 	let projectName = args._[0]
 	if (projectName === undefined) {
 		console.log("%s Missing project name.", chalk.red.bold("ERROR"))
-		console.log("Run \"create-kwl-node %s\"", chalk.blue.bold("<project-name>"))
+		console.log("Run \"create-node-app %s\"", chalk.blue.bold("<project-name>"))
 		process.exit(1)
 	}
 
