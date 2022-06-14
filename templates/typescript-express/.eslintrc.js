@@ -11,13 +11,13 @@ module.exports = {
 	extends: [
 		"eslint:recommended",
 		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/eslint-recommended"
 	],
 	rules: {
 		"indent": [
 			"error",
 			"tab"
 		],
-		"quotes": ["error", "double", { "allowTemplateLiterals": true }],
-		"no-unused-vars": ["warn", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+		"quotes": ["error", "double", { "allowTemplateLiterals": true }]
 	}
 }
