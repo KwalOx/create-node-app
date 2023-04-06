@@ -19,7 +19,7 @@ This command will create files in your current directory.
 ```sh
 npx @kwalox/create-node-app my-app
 ```
-it will generate the initial project structure without installing dependencies. Add `--install` if you want dependacies to be immediately installed.
+It will generate the initial project structure without installing dependencies. Add `--install` if you want dependencies to be immediately installed.
 
 ## What’s Included?
 
